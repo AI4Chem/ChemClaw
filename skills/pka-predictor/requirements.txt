@@ -1,0 +1,34 @@
+# pKa Predictor - Dependencies
+# 当前版本对应：
+# - custom 后端
+# - Uni-pKa Bohrium single-weight 后端
+#
+# 建议在虚拟环境中安装：
+#   python3 -m venv .venv
+#   source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# 说明：
+# - unicore 不建议直接写入 requirements.txt，通常需要源码安装
+# - Uni-Core 建议在虚拟环境中单独安装：
+#     cd Uni-Core
+#     pip install --no-build-isolation .
+# - 当前 unipka 后端依赖本地 Uni-pKa 仓库中的代码与权重文件
+
+# Core scientific stack
+numpy>=1.26.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Chemistry
+rdkit>=2023.9.0
+
+# ML / inference
+torch>=2.0.0
+
+# Optional: custom backend model loading
+# 如果 custom 后端需要加载自己的 joblib 模型，请取消注释
+# joblib>=1.2.0
+
+# Optional: if you use sklearn-based custom models
+# scikit-learn>=1.0.0

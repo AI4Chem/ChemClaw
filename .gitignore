@@ -3,4 +3,13 @@
 
 # Python bytecode files
 __pycache__/
+*.pyc.venv/
+venv/
+__pycache__/
 *.pyc
+
+# Ignore large model weights
+skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2/
+*.pt
+*.pth
+*.ckpt
