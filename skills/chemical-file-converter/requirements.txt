@@ -1,0 +1,2 @@
+rdkit>=2023.0.0
+openbabel-wheel; platform_system != "Windows"
