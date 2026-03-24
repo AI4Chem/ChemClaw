@@ -1,7 +1,0 @@
-reaction_id,entry,reactants,products,catalyst,ligand,base,solvent,temperature,time,yield_value,yield_type,reaction_type,scheme_number,confidence,raw_text,yield
-RXN_000,,['4-bromotoluene'],,Pd(PPh3),PPh3,K2CO3,DMF,80 °C,12 h,85,isolated,,,1.0,"The reaction of 4-bromotoluene with phenylboronic acid was carried out using Pd(PPh3)4 (5 mol%) as catalyst, K2CO3 (2.0 equiv) as base in DMF at 80 °C for 12 h, affording the desired product in 85% is",85%
-RXN_000,1,,,Pd(PPh3)4,PPh3,K2CO3,DMF,80,12,85,isolated,,Table 1,0.7,,85
-RXN_001,2,,,Pd(dppf)Cl2,dppf,Na2CO3,DMF,80,12,91,isolated,,Table 1,0.7,,91
-RXN_002,3,,,Pd(OAc)2,-,K2CO3,Toluene,80,24,72,isolated,,Table 1,0.7,,72
-RXN_003,4,,,NiCl2(dppp),dppp,K3PO4,DMF,80,12,45,isolated,,Table 1,0.7,,45
-RXN_004,5,,,CuI,-,Cs2CO3,DMSO,100,6,38,isolated,,Table 1,0.7,,38
