@@ -1,0 +1,15 @@
+# Literature Parsing Skill Dependencies
+
+# PDF 处理和文本提取
+pdfplumber>=0.11.0
+pymupdf>=1.24.0
+
+# PDF 渲染（用于复杂页面）
+pypdfium2>=4.0.0
+
+# 图片处理
+Pillow>=10.0.0
+
+# 可选：OCR 支持（扫描版 PDF）
+# pytesseract>=0.3.10
+# opencv-python>=4.8.0

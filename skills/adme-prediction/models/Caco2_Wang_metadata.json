@@ -1,0 +1,29 @@
+{
+  "dataset": "Caco2_Wang",
+  "description": "Caco-2 细胞有效通透性",
+  "type": "regression",
+  "unit": "log Papp (10^-6 cm/s)",
+  "training_date": "2026-03-18T01:40:28.772023",
+  "n_train": 728,
+  "n_test": 182,
+  "train_metrics": {
+    "R²": 0.8833555297817705,
+    "RMSE": 0.26452001617394283,
+    "MAE": 0.26452001617394283
+  },
+  "test_metrics": {
+    "R²": 0.5734854151760824,
+    "RMSE": 0.5125758815389946,
+    "MAE": 0.5125758815389946
+  },
+  "fingerprint": {
+    "radius": 2,
+    "nbits": 2048
+  },
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2
+  }
+}

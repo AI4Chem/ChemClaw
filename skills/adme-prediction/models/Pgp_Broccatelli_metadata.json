@@ -1,0 +1,27 @@
+{
+  "dataset": "Pgp_Broccatelli",
+  "description": "P-糖蛋白抑制",
+  "type": "classification",
+  "unit": "",
+  "training_date": "2026-03-18T01:41:04.014287",
+  "n_train": 975,
+  "n_test": 243,
+  "train_metrics": {
+    "AUC": 0.9221196323691203,
+    "Accuracy": 0.9179487179487179
+  },
+  "test_metrics": {
+    "AUC": 0.8351648351648352,
+    "Accuracy": 0.831275720164609
+  },
+  "fingerprint": {
+    "radius": 2,
+    "nbits": 2048
+  },
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2
+  }
+}

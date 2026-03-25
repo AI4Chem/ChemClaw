@@ -1,0 +1,10 @@
+# Molecular Visualizer - Dependencies
+# 支持普通分子和聚合物 2D 结构绘制
+
+# Core dependencies
+rdkit>=2023.9.0
+Pillow>=10.0.0
+requests>=2.28.0
+
+# Optional: for batch processing
+# pandas>=2.0.0

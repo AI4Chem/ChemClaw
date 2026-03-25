@@ -1,0 +1,27 @@
+{
+  "dataset": "Bioavailability_Ma",
+  "description": "口服生物利用度",
+  "type": "classification",
+  "unit": "",
+  "training_date": "2026-03-18T01:41:09.325910",
+  "n_train": 512,
+  "n_test": 128,
+  "train_metrics": {
+    "AUC": 0.6681427152247892,
+    "Accuracy": 0.841796875
+  },
+  "test_metrics": {
+    "AUC": 0.5135680234690136,
+    "Accuracy": 0.7890625
+  },
+  "fingerprint": {
+    "radius": 2,
+    "nbits": 2048
+  },
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2
+  }
+}

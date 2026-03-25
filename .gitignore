@@ -5,6 +5,7 @@
 __pycache__/
 *.pyc
 
+<<<<<<< HEAD
 # Python virtual environments (DO NOT upload to GitHub)
 .venv/
 .venv-py311/
@@ -28,3 +29,6 @@ skills/bamboo_mixer/data_oss/
 
 # Runtime output directories
 /tmp/chemclaw/
+=======
+playground/
+>>>>>>> upstream/main

@@ -1,0 +1,37 @@
+# mol-paper-renderer - 论文级分子渲染工具依赖
+# Publication-Quality Molecular Renderer Dependencies
+
+# 核心依赖 (Core)
+xyzrender>=0.2.1
+
+# 完整功能安装 (All features)
+# xyzrender[all]>=0.2.1
+
+# 按需安装可选依赖 (Optional dependencies by feature)
+
+# SMILES 支持 - 从 SMILES 字符串生成 3D 结构
+# xyzrender[smiles] 或单独安装：
+rdkit>=2023.0.0
+
+# CIF 晶体结构支持
+# xyzrender[cif] 或单独安装：
+ase>=3.22.0
+
+# VASP/Quantum ESPRESSO 晶体结构支持
+# xyzrender[crystal] 或单独安装：
+phonopy>=2.20.0
+
+# GIF 动画生成支持
+# xyzrender[gif] 或单独安装：
+cairosvg>=2.7.0
+Pillow>=10.0.0
+
+# 交互式查看器 (仅 Linux)
+# xyzrender[v] 或单独安装：
+# vmol (Linux only)
+
+# 其他可能需要的依赖
+numpy>=1.24.0
+
+# 开发模式安装 (Development)
+# pip install -e .  (如果从源码安装 xyzrender)

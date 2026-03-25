@@ -1,0 +1,29 @@
+{
+  "dataset": "Lipophilicity_AstraZeneca",
+  "description": "亲脂性",
+  "type": "regression",
+  "unit": "logD",
+  "training_date": "2026-03-18T01:43:39.581921",
+  "n_train": 3360,
+  "n_test": 840,
+  "train_metrics": {
+    "R²": 0.6199845276670937,
+    "RMSE": 0.7408365554393993,
+    "MAE": 0.7408365554393993
+  },
+  "test_metrics": {
+    "R²": 0.44254899195640574,
+    "RMSE": 0.9012947156770265,
+    "MAE": 0.9012947156770265
+  },
+  "fingerprint": {
+    "radius": 2,
+    "nbits": 2048
+  },
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2
+  }
+}

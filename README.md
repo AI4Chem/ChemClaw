@@ -34,11 +34,15 @@ pip install rdkit
 ### 使用示例
 
 ```bash
+<<<<<<< HEAD
 # 进入 skill 目录
 cd skills/geometry_optimizer
 
 # 运行几何优化
 python scripts/main_script.py --smiles "CCO" --name "乙醇" --output-dir ./results
+=======
+npx skills add AI4Chem/ChemClaw --skill mol_3d_viewer
+>>>>>>> upstream/main
 ```
 
 ### 批量处理
@@ -56,6 +60,7 @@ EOF
 python scripts/main_script.py --input input.json --output output.json --output-dir ./results
 ```
 
+<<<<<<< HEAD
 ## 目录结构
 
 ```
@@ -85,6 +90,9 @@ ChemClaw/
 ## 开发指南
 
 ### 添加新的 Skill
+=======
+## Contributing
+>>>>>>> upstream/main
 
 1. 在 `skills/` 目录下创建新的 skill 文件夹
 2. 参考现有 skill 的文件结构

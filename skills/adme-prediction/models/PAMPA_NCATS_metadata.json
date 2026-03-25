@@ -1,0 +1,27 @@
+{
+  "dataset": "PAMPA_NCATS",
+  "description": "PAMPA 通透性",
+  "type": "classification",
+  "unit": "",
+  "training_date": "2026-03-18T01:40:42.584564",
+  "n_train": 1628,
+  "n_test": 406,
+  "train_metrics": {
+    "AUC": 0.5530601233614146,
+    "Accuracy": 0.871007371007371
+  },
+  "test_metrics": {
+    "AUC": 0.5327868852459017,
+    "Accuracy": 0.8596059113300493
+  },
+  "fingerprint": {
+    "radius": 2,
+    "nbits": 2048
+  },
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2
+  }
+}

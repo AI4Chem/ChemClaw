@@ -1,0 +1,27 @@
+{
+  "dataset": "HIA_Hou",
+  "description": "人体肠道吸收",
+  "type": "classification",
+  "unit": "",
+  "training_date": "2026-03-18T01:40:50.757152",
+  "n_train": 463,
+  "n_test": 115,
+  "train_metrics": {
+    "AUC": 0.7121212121212122,
+    "Accuracy": 0.91792656587473
+  },
+  "test_metrics": {
+    "AUC": 0.625,
+    "Accuracy": 0.9217391304347826
+  },
+  "fingerprint": {
+    "radius": 2,
+    "nbits": 2048
+  },
+  "model_params": {
+    "n_estimators": 200,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2
+  }
+}

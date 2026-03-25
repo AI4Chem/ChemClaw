@@ -1,0 +1,9 @@
+# IUPAC to SMILES Converter - Dependencies
+# 完全使用 OPSIN API，不再依赖 PubChem
+
+# Core dependencies
+rdkit>=2023.9.0
+requests>=2.28.0
+
+# Optional: for data processing
+# pandas>=2.0.0
