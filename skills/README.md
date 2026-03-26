@@ -22,7 +22,7 @@
 | 3.4 | ↳ | `melting-point-prediction` |  | ⬜ 待建设 |
 | 3.5 | ↳ | `boiling-point-prediction` |  | ⬜ 待建设 |
 | 3.6 | ↳ | `ch-nmr-prediction` |  | ⬜ 待建设 |
-| 3.7 | ↳ | `b-nmr-prediction` |  | ⬜ 待建设 |
+| 3.7 | ↳ | `b-nmr-prediction` | 预测化合物中硼原子的核磁位移 | ✅ 已完成 |
 | 3.8 | ↳ | `p-nmr-prediction` |  | ⬜ 待建设 |
 | 3.9 | ↳ | `f-nmr-prediction` |  | ⬜ 待建设 |
 | 3.10 | ↳ | `si-nmr-prediction` |  | ⬜ 待建设 |
