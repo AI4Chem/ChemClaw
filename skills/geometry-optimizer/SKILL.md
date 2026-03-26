@@ -210,6 +210,108 @@ xTB 几何优化收敛标准：
 
 ---
 
+## 安装指南
+
+### 系统要求
+
+- Python 3.8+
+- xTB 6.3+（半经验量子化学程序）
+
+### 1. 安装 Python 依赖
+
+```bash
+cd /home/administratorlulaiao/.openclaw/workspace/skills/geometry-optimizer
+pip install -r requirements.txt
+```
+
+或直接安装：
+
+```bash
+pip install rdkit
+```
+
+### 2. 安装 xTB
+
+xTB 是该 skill 的核心依赖，必须安装。以下是几种安装方式：
+
+#### 方式 A: Conda（推荐）
+
+```bash
+conda install -c conda-forge xtb
+```
+
+验证安装：
+
+```bash
+xtb --version
+```
+
+#### 方式 B: Ubuntu/Debian
+
+检查系统仓库：
+
+```bash
+apt-cache search xtb
+```
+
+如果仓库中没有，需要从源码编译或使用 Conda。
+
+#### 方式 C: 源码编译
+
+```bash
+# 安装依赖
+sudo apt install cmake gfortran libblas-dev liblapack-dev
+
+# 克隆源码
+git clone https://github.com/grimme-lab/xtb.git
+cd xtb
+
+# 编译
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=$HOME/.local
+make -j4
+make install
+
+# 添加到 PATH
+export PATH=$HOME/.local/bin:$PATH
+```
+
+详细编译说明：https://xtb-docs.readthedocs.io/en/latest/installation.html
+
+### 3. 验证安装
+
+运行测试脚本：
+
+```bash
+python scripts/test_xtb_backend.py
+```
+
+预期输出：
+
+```
+✓ xTB is available: xtb version X.X.X
+✓ Full optimization tests can be run!
+```
+
+### 4. 可选：安装 CREST（构象搜索）
+
+如需进行构象搜索，可安装 CREST：
+
+```bash
+# Conda
+conda install -c conda-forge crest
+
+# 或从源码：https://github.com/grimme-lab/crest
+```
+
+验证：
+
+```bash
+crest --version
+```
+
+---
+
 ## 系统依赖
 
 ### 必须安装

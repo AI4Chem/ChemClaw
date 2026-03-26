@@ -31,24 +31,24 @@ pip install -r requirements.txt
 pip install huggingface_hub
 
 # 下载模型权重文件
-mkdir -p skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2
+mkdir -p skills/pka-predictor/assets/Uni-pKa/uni-pka-ckpt_v2
 hf download Lai-ao/uni-pka-ckpt_v2 t_dwar_v_novartis_a_b.pt \
   --repo-type model \
-  --local-dir skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2
+  --local-dir skills/pka-predictor/assets/Uni-pKa/uni-pka-ckpt_v2
 
 # 下载模板文件（如果本地没有）
 hf download Lai-ao/uni-pka-ckpt_v2 smarts_pattern.tsv \
   --repo-type model \
-  --local-dir skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2
+  --local-dir skills/pka-predictor/assets/Uni-pKa/uni-pka-ckpt_v2
 
 hf download Lai-ao/uni-pka-ckpt_v2 simple_smarts_pattern.tsv \
   --repo-type model \
-  --local-dir skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2
+  --local-dir skills/pka-predictor/assets/Uni-pKa/uni-pka-ckpt_v2
 ```
 
 **或手动下载：**
 
-访问 https://huggingface.co/Lai-ao/uni-pka-ckpt_v2 下载以下文件到 `Uni-pKa/uni-pka-ckpt_v2/` 目录：
+访问 https://huggingface.co/Lai-ao/uni-pka-ckpt_v2 下载以下文件到 `assets/Uni-pKa/uni-pka-ckpt_v2/` 目录：
 - `t_dwar_v_novartis_a_b.pt`（~571MB，模型权重）
 - `smarts_pattern.tsv`（SMARTS 模板）
 - `simple_smarts_pattern.tsv`（简化 SMARTS 模板）
@@ -57,10 +57,10 @@ hf download Lai-ao/uni-pka-ckpt_v2 simple_smarts_pattern.tsv \
 
 ```bash
 # 测试 custom 后端
-./run_with_venv.sh --smiles "CC(=O)O" --name "乙酸" --backend custom
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --name "乙酸" --backend custom
 
 # 测试 unipka 后端
-./run_with_venv.sh --smiles "CC(=O)O" --name "乙酸" --backend unipka --cpu
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --name "乙酸" --backend unipka --cpu
 ```
 
 ## 触发条件
@@ -118,25 +118,25 @@ hf download Lai-ao/uni-pka-ckpt_v2 simple_smarts_pattern.tsv \
 
 ```bash
 # 运行安装脚本（自动下载模型和模板文件）
-./setup_models.sh
+./scripts/setup_models.sh
 ```
 
 **使用虚拟环境（推荐，支持 UniPKA 后端）：**
 
 ```bash
 # 使用包装脚本（自动激活虚拟环境）
-./run_with_venv.sh --smiles "CC(=O)O" --name "乙酸"
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --name "乙酸"
 
 # unipka 后端（使用默认单文件权重与模板）
-./run_with_venv.sh --smiles "CC(=O)O" --name "乙酸" --backend unipka --cpu
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --name "乙酸" --backend unipka --cpu
 
 # 显式指定模型与模板
-./run_with_venv.sh \
+./scripts/run_with_venv.sh \
   --smiles "CC(=O)O" \
   --name "乙酸" \
   --backend unipka \
-  --model "Uni-pKa/uni-pka-ckpt_v2/t_dwar_v_novartis_a_b.pt" \
-  --template "Uni-pKa/uni-pka-ckpt_v2/smarts_pattern.tsv" \
+  --model "assets/Uni-pKa/uni-pka-ckpt_v2/t_dwar_v_novartis_a_b.pt" \
+  --template "assets/Uni-pKa/uni-pka-ckpt_v2/smarts_pattern.tsv" \
   --cpu
 ```
 
@@ -145,3 +145,75 @@ hf download Lai-ao/uni-pka-ckpt_v2 simple_smarts_pattern.tsv \
 ```bash
 # custom 后端
 python3 scripts/predict_pka.py --smiles "CC(=O)O" --name "乙酸" --backend custom
+```
+
+---
+
+## 🔧 调试指南
+
+### 推荐调试环境
+
+**方案 1：虚拟环境（推荐）**
+```bash
+cd skills/pka-predictor
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+**方案 2：Conda 环境**
+```bash
+conda create -n pka-predictor python=3.12
+conda activate pka-predictor
+pip install -r requirements.txt
+```
+
+### 常见错误及解决方案
+
+| 错误 | 解决方案 |
+|------|----------|
+| `No module named 'pandas'` | `pip install pandas` |
+| `No module named 'scipy'` | `pip install scipy` |
+| `No module named 'torch'` | `pip install torch` |
+| RDKit 导入失败 | `pip uninstall rdkit && pip install rdkit` |
+
+### 调试技巧
+
+**启用详细输出：**
+```bash
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --verbose
+```
+
+**交互式调试：**
+```python
+from scripts.backends.custom_backend import CustomBackend
+backend = CustomBackend()
+result = backend.predict("CC(=O)O", "乙酸")
+print(result)
+```
+
+**检查依赖版本：**
+```bash
+python3 -c "import rdkit, pandas, torch; print(rdkit.__version__, pandas.__version__, torch.__version__)"
+```
+
+### 测试命令
+
+**基础测试：**
+```bash
+# custom 后端
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --backend custom
+
+# unipka 后端
+./scripts/run_with_venv.sh --smiles "CC(=O)O" --backend unipka --cpu
+```
+
+**批量测试：**
+```bash
+cat > test_compounds.smi << EOF
+CC(=O)O 乙酸
+c1ccccc1O 苯酚
+CCO 乙醇
+EOF
+./scripts/run_with_venv.sh --input test_compounds.smi --output results.json
+```

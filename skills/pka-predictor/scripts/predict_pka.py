@@ -161,8 +161,8 @@ def main():
 
   # UniPKA 单文件权重后端（显式指定模型和模板）
   %(prog)s --smiles "CC(=O)O" --name "乙酸" --backend unipka \\
-      --model "/home/administratorlulaiao/.openclaw/workspace/skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2/t_dwar_v_novartis_a_b.pt" \\
-      --template "/home/administratorlulaiao/.openclaw/workspace/skills/pka-predictor/Uni-pKa/uni-pka-ckpt_v2/smarts_pattern.tsv"
+      --model "/home/administratorlulaiao/.openclaw/workspace/skills/pka-predictor/assets/Uni-pKa/uni-pka-ckpt_v2/t_dwar_v_novartis_a_b.pt" \\
+      --template "/home/administratorlulaiao/.openclaw/workspace/skills/pka-predictor/assets/Uni-pKa/uni-pka-ckpt_v2/smarts_pattern.tsv"
 
   # 批量预测
   %(prog)s --input compounds.smi --output results.json --backend custom

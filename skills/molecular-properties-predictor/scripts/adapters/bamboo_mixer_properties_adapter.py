@@ -28,7 +28,7 @@ def _abspath_keep_symlink(path_str: str) -> Path:
 
 
 def _resolve_bamboo_repo() -> Path:
-    repo_env = os.environ.get("BAMBOO_MIXER_REPO", "../bamboo_mixer")
+    repo_env = os.environ.get("BAMBOO_MIXER_REPO", "assets/bamboo_mixer")
     repo_path = _abspath_keep_symlink(repo_env)
     if not repo_path.exists():
         raise FileNotFoundError(f"Bamboo-Mixer repo not found: {repo_path}")

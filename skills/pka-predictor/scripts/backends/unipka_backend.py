@@ -42,7 +42,7 @@ from rdkit.Chem import (
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SCRIPTS_DIR = os.path.dirname(CURRENT_DIR)
 SKILL_ROOT = os.path.dirname(SCRIPTS_DIR)
-UNIPKA_ROOT = os.path.join(SKILL_ROOT, "Uni-pKa")
+UNIPKA_ROOT = os.path.join(SKILL_ROOT, "assets", "Uni-pKa")
 
 sys.path.insert(0, UNIPKA_ROOT)
 sys.path.insert(0, os.path.join(UNIPKA_ROOT, "unimol"))

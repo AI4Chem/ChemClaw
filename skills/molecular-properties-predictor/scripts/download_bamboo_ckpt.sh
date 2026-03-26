@@ -7,7 +7,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILL_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-BAMBOO_DIR="${SKILL_DIR}/../bamboo_mixer"
+BAMBOO_DIR="${SKILL_DIR}/assets/bamboo_mixer"
 TARGET_DIR="${BAMBOO_DIR}/hf_bamboo_mixer"
 
 echo "[INFO] skill dir:   ${SKILL_DIR}"

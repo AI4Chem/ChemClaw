@@ -165,6 +165,7 @@ python scripts/main_script.py --smiles "O=C(O)c1ccccc1" --properties bp,ST,densi
 
 ```bash
 export BAMBOO_MIXER_ADAPTER_PY=scripts/adapters/bamboo_mixer_properties_adapter.py
-export BAMBOO_MIXER_REPO=../bamboo_mixer
-export BAMBOO_MIXER_PYTHON=../bamboo_mixer/.venv/bin/python
-export BAMBOO_MIXER_MONO_CKPT=../bamboo_mixer/hf_bamboo_mixer/ckpts/mono/optimal.pt
+export BAMBOO_MIXER_REPO=assets/bamboo_mixer
+export BAMBOO_MIXER_PYTHON=assets/bamboo_mixer/.venv/bin/python
+export BAMBOO_MIXER_MONO_CKPT=assets/bamboo_mixer/hf_bamboo_mixer/ckpts/mono/optimal.pt
+```
