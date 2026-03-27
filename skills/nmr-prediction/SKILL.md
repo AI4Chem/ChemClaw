@@ -28,7 +28,7 @@ nmr-prediction/
 ├── nmr_prediction.py
 ├── requirements.txt
 └── assets/
-    ├── NMRNet/        ← NMRNet 推理代码（从 GitHub 下载后放这里）
+    ├── NMRNet/        ← NMRNet 精简推理代码 + `oc_limit_dict.txt`
     └── Uni-Core/      ← Uni-Core 基础库（需要先 install）
 ```
 
@@ -68,6 +68,7 @@ python nmr_prediction.py --setup
 - H/C 液相 scaler（各 623 B）→ 同上目录
 
 > 注意：NMRNet 仓库自带的 `demo/notebook/scaler/` 是**固态** NMR scaler，不适用于液相预测。
+> 当前 skill 只保留 NMRNet 的精简推理代码与 `oc_limit_dict.txt`，不依赖 `demo/` 数据目录。
 
 ## How to run（环境已准备好时）
 
@@ -106,6 +107,7 @@ NMR 谱图 PNG
 - macOS CPU 推理速度较慢：¹H 约 10-30 秒，¹³C 约 10-30 秒（取决于分子大小）
 - 权重固定存放在 `/tmp/weights/`（重启后消失，需重新 `--setup`）
 - NMRNet / Uni-Core 代码在 `assets/` 里，随 repo 一起走
+- `assets/NMRNet/oc_limit_dict.txt` 为运行时所需字典文件，不能删除
 
 ## References
 

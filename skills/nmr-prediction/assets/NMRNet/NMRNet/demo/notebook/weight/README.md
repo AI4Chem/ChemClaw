@@ -1,1 +1,0 @@
-Please put the demo pre-trained or fine-tuned weights here.

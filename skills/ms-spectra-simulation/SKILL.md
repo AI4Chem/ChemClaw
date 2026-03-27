@@ -1,6 +1,6 @@
 ---
 name: ms-spectra-simulation
-description: Predict and visualize MS/MS spectra from a single SMILES using the bundled local Fiora installation inside this skill directory. Use when the user wants a mass spectrum, MGF output, or a plotted stick spectrum from SMILES, with optional custom Name, precursor type, collision energy, and instrument settings.
+description: Predict and visualize MS/MS spectra from a single SMILES using the fioRa online app. Use when the user wants a mass spectrum, MGF/MSP output, or a plotted stick spectrum from SMILES, with optional custom Name, precursor type, collision energy, and instrument settings.
 ---
 
 # MS Spectra Simulation Skill
@@ -8,6 +8,7 @@ description: Predict and visualize MS/MS spectra from a single SMILES using the 
 ## When to use this
 Use this skill when the user provides a **SMILES** string and wants:
 - Predicted **MS/MS spectrum**
+- Raw **MSP** output downloaded from fioRa
 - Standard **MGF** output
 - A quick **stick-spectrum PNG** visualization
 - Simple defaults without manually preparing a CSV
@@ -23,31 +24,36 @@ Use this skill when the user provides a **SMILES** string and wants:
 - `--show-title / --no-show-title` (optional, default: no title on the plot)
 
 ## Outputs
+- `/tmp/chemclaw/predicted_ms.msp`
 - `/tmp/chemclaw/predicted_ms.mgf`
 - `/tmp/chemclaw/predicted_ms.png`
 
 If `--output-stem mol1` is used, the outputs become:
+- `/tmp/chemclaw/mol1.msp`
 - `/tmp/chemclaw/mol1.mgf`
 - `/tmp/chemclaw/mol1.png`
 
 ## Agent response
 When returning results to the user, include the generated spectrum image directly in the response when a PNG was created.
 
+## Notes
+- This skill calls the fioRa online app at `https://apps.bam.de/shn01/fioRa/`.
+- The site is a Shiny web app, so this skill uses Playwright browser automation instead of a simple REST request.
+- Network access is required.
+
 ## New environment (from zero)
 
 ```bash
-conda create -n fiora-osx python=3.10 pip -y
-conda activate fiora-osx
+conda create -n fiora-online python=3.10 pip -y
+conda activate fiora-online
 
-cd ms-spectra-simulation/assets/fiora
-pip install .
-
-cd ../..
+cd ms-spectra-simulation
+python -m pip install -r requirements.txt
+python -m playwright install chromium
 python ms_spectra_simulation.py CCO
 ```
 
-- This skill bundles its own `assets/fiora/` subdirectory.
-- Run the script inside the `fiora-osx` environment so `torch`, `rdkit`, and `fiora` are available.
+- Run the script in an environment with browser access.
 
 ## How to use (environment already prepared)
 
@@ -64,6 +70,7 @@ This uses:
 - `instrument=HCD`
 - plot enabled
 - plot title hidden
+- fioRa online backend
 
 ### Custom metadata
 ```bash

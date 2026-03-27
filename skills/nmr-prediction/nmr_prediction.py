@@ -186,7 +186,7 @@ def _make_model_args(selected_atom: str, model_dir: str) -> argparse.Namespace:
     args.atom_descriptor          = 0
     args.classification_head_name = "nmr_head"
     args.model_path               = os.path.join(model_dir, CHECKPOINT_REL)
-    args.dict_path                = os.path.join(NMRNET_DIR, "demo/notebook/dict/oc_limit_dict.txt")
+    args.dict_path                = os.path.join(NMRNET_DIR, "oc_limit_dict.txt")
     args.global_distance          = False
     args.gaussian_kernel          = True
     args.saved_dir = model_dir   # target_scaler.ss 在各自的模型目录里
