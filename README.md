@@ -1,5 +1,9 @@
 # ChemClaw
 
+<p align="center">
+  <img src="./assets/chemclaw.png" alt="ChemClaw Logo" />
+</p>
+
 ChemClaw — The first chemistry-native AI agent skill library.
 
 ## Install
