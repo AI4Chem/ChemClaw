@@ -17,26 +17,32 @@
 | 2.3 | ↳ | `mol-image-to-smiles` | 分子结构图片识别为 SMILES（DECIMER/MolNextR）。 | ✅ 已完成 |
 | 3 | **Prediction Engines** |  | 基于分子表示进行性质与谱学相关预测。 |  |
 | 3.1 | ↳ | `adme-prediction` | 预测分子 ADME 性质（如 Caco-2、HIA、Pgp、生物利用度、亲脂性）。 | ✅ 已完成 |
-| 3.2 | ↳ | `pka-prediction` |  | ⬜ 待建设 |
+| 3.2 | ↳ | `pka-predictor` | 预测小分子的 pKa，支持启发式与 Uni-pKa 后端。 | ✅ 已完成 |
 | 3.3 | ↳ | `et30-prediction` |  | ⬜ 待建设 |
 | 3.4 | ↳ | `melting-point-prediction` |  | ⬜ 待建设 |
 | 3.5 | ↳ | `boiling-point-prediction` |  | ⬜ 待建设 |
 | 3.6 | ↳ | `ch-nmr-prediction` |  | ⬜ 待建设 |
-| 3.7 | ↳ | `b-nmr-prediction` | 预测化合物中硼原子的核磁位移 | ✅ 已完成 |
+| 3.7 | ↳ | `boron-nmr-predict` | 预测含硼化合物的 11B NMR 化学位移，并可输出标注图。 | ✅ 已完成 |
 | 3.8 | ↳ | `p-nmr-prediction` |  | ⬜ 待建设 |
 | 3.9 | ↳ | `f-nmr-prediction` |  | ⬜ 待建设 |
 | 3.10 | ↳ | `si-nmr-prediction` |  | ⬜ 待建设 |
-| 3.11 | ↳ | `ir-prediction` |  | ⬜ 待建设 |
-| 3.12 | ↳ | `raman-prediction` |  | ⬜ 待建设 |
-| 3.13 | ↳ | `surface-tension-prediction` |  | ⬜ 待建设 |
+| 3.11 | ↳ | `ir-spectra-simulation` | 基于 SMILES/XYZ 计算并可视化 IR 光谱（MLatom）。 | ✅ 已完成 |
+| 3.12 | ↳ | `raman-spectra-simulation` | 基于 SMILES/XYZ 计算并可视化 Raman 光谱（MLatom）。 | ✅ 已完成 |
+| 3.13 | ↳ | `surface-tension-predictor` | 基于 SMILES 的表面张力参考预测。 | ✅ 已完成 |
 | 3.14 | ↳ | `viscosity-prediction` |  | ⬜ 待建设 |
 | 3.15 | ↳ | `tlc-rf-prediction` |  | ⬜ 待建设 |
 | 3.16 | ↳ | `chiral-separation-prediction` |  | ⬜ 待建设 |
+| 3.17 | ↳ | `molecular-properties-predictor` | 预测多种物化性质（如沸点、密度、黏度、表面张力等）。 | ✅ 已完成 |
+| 3.18 | ↳ | `nmr-prediction` | 基于 SMILES 预测 1H/13C NMR 位移并生成谱图。 | ✅ 已完成 |
+| 3.19 | ↳ | `uv-vis-spectrum-simulation` | 基于 SMILES 获取并绘制 UV-Vis 光谱。 | ✅ 已完成 |
+| 3.20 | ↳ | `ms-spectra-simulation` | 基于 SMILES 预测并可视化 MS/MS 光谱，支持 MGF/MSP 输出。 | ✅ 已完成 |
+| 3.21 | ↳ | `md-vib-spectra-simulation` | 基于 MD 轨迹计算振动谱（power spectrum/IR）。 | ✅ 已完成 |
+| 3.22 | ↳ | `xrd-spectra-simulation` | 基于 CIF 结构文件计算 XRD 光谱。 | ✅ 已完成 |
 | 4 | **Reaction Intelligence** |  | 围绕反应结果、条件和选择性进行推断与优化。 |  |
 | 4.1 | ↳ | `reaction-outcome-prediction` |  | ⬜ 待建设 |
 | 4.2 | ↳ | `reaction-condition-optimization` |  | ⬜ 待建设 |
 | 5 | **Computational Chemistry** |  | 提供计算化学流程与文件处理能力。 |  |
-| 5.1 | ↳ | `geometry-optimization` |  | ⬜ 待建设 |
+| 5.1 | ↳ | `geometry-optimizer` | 使用 xTB 进行分子几何优化，支持 SMILES/XYZ 输入。 | ✅ 已完成 |
 | 5.2 | ↳ | `chemical-file-converter` | 支持 `.xyz/.gjf/.mol/.sdf/.pdb/.mol2` 等格式互转。 | ✅ 已完成 |
 | 6 | **Experiment Intelligence** |  | 提供实验方案与实验执行辅助。 |  |
 | 6.1 | ↳ | `experimental-protocol-generation` |  | ⬜ 待建设 |
