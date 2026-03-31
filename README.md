@@ -50,4 +50,12 @@ See the full catalog and roadmap in [`skills/README.md`](./skills/README.md).
 
 ## Contributing
 
+ChemClaw is nothing without community.
+
+We welcome discussion, feedback, and contributions from the community. If you would like to share ideas or contribute, join the conversation in [GitHub Issues](https://github.com/InternScience/ChemClaw/issues) or our WeChat group.
+
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to add a new skill, file structure, and review checklist.
+
+<p align="center">
+  <img src="./assets/qrcode.jpg" alt="ChemClaw QR Code" width="220" />
+</p>
